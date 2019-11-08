@@ -26,6 +26,39 @@ if (isset($_POST['userid']) && isset($_POST['password']))
   }
   $db_conn->close();
 }
+
+  if (isset($_SESSION['valid_user']))
+  {
+    //echo '<p>You are logged in as: '.$_SESSION['valid_user'].' <br />';
+    //echo '<a href="logout.php">Log out</a></p>';
+    header("Location: index.html");
+  }
+  else
+  {
+    if (isset($userid))
+    {
+      // if they've tried and failed to log in
+      echo '<p>Could not log you in.</p>';
+    }
+    else
+    {
+      // they have not tried to log in yet or have logged out
+      echo '<p>You are not logged in.</p>';
+    }
+
+    // provide form to log in
+    echo '<form action="login.php" method="post">';
+    echo '<fieldset>';
+    echo '<legend>Login</legend>';
+    echo '<p><label for="userid">UserID:</label>';
+    echo '<input type="text" name="userid" id="userid" size="30"/></p>';
+    echo '<p><label for="password">Password:</label>';
+    echo '<input type="password" name="password" id="password" size="30"/></p>';    
+    echo '</fieldset>';
+    echo '<button type="submit" name="login">Login</button>';
+    echo '</form>';
+
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -56,40 +89,5 @@ if (isset($_POST['userid']) && isset($_POST['password']))
     </style>
 </head>
 <body>
-<?php
-  if (isset($_SESSION['valid_user']))
-  {
-    //echo '<p>You are logged in as: '.$_SESSION['valid_user'].' <br />';
-    //echo '<a href="logout.php">Log out</a></p>';
-      header("Location: index.html");
-  }
-  else
-  {
-    if (isset($userid))
-    {
-      // if they've tried and failed to log in
-      echo '<p>Could not log you in.</p>';
-    }
-    else
-    {
-      // they have not tried to log in yet or have logged out
-      echo '<p>You are not logged in.</p>';
-    }
-
-    // provide form to log in
-    echo '<form action="login.php" method="post">';
-    echo '<fieldset>';
-    echo '<legend>Login</legend>';
-    echo '<p><label for="userid">UserID:</label>';
-    echo '<input type="text" name="userid" id="userid" size="30"/></p>';
-    echo '<p><label for="password">Password:</label>';
-    echo '<input type="password" name="password" id="password" size="30"/></p>';    
-    echo '</fieldset>';
-    echo '<button type="submit" name="login">Login</button>';
-    echo '</form>';
-
-  }
-?>
-
 </body>
 </html>
