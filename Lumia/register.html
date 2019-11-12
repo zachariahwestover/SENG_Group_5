@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Home Page</title>
+    <style type="text/css">
+      fieldset {
+         width: 50%;
+         border: 2px solid #ff0000;
+      }
+      legend {
+         font-weight: bold;
+         font-size: 125%;
+      }
+      label {
+         width: 125px;
+         float: left;
+         text-align: left;
+         font-weight: bold;
+      }
+      input {
+         border: 1px solid #000;
+         padding: 3px;
+      }
+      button {
+         margin-top: 12px;
+      }
+    </style>
+</head>
+<body>
+   <form action="register.php" method="post">
+   <fieldset>
+    <legend>Register</legend>
+    
+    <p><label for="Username">Username:</label>
+    <input type="text" name="Username" id="Username" size="30"/></p>
+      
+    <p><label for="Password">Password:</label>
+    <input type="Password" name="Password" id="Password" size="30"/></p>
+      
+    <p><label for="Fname">First Name:</label>
+    <input type="Fname" name="Fname" id="Fname" size="30"/></p>
+      
+   <p><label for="Lname">Last Name:</label>
+    <input type="Lname" name="Lname" id="Lname" size="30"/></p>
+      
+    <p><label for="eMail">eMail:</label>
+    <input type="eMail" name="eMail" id="eMail" size="30"/></p>
+    
+    <select name="Type" type="Type" id="Type">
+            <option type="Type" value="1">Sponsor</option>
+            <option type="Type" value="2">Reviewer</option>
+            <option type="Type" value="3">Presenter</option>
+            <option type="Type" value="4">Attendee</option>
+        </select>
+      
+    
+      
+    </fieldset>
+    <button type="submit" name="login">Create Account</button>
+    </form>
+    </body>
+</html>
+
+    
+    
+    
+    
+    
+    
+    
+    
