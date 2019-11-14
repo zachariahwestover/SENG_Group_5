@@ -36,10 +36,25 @@
     Author: BootstrapMade.com
     Author URL: https://bootstrapmade.com
   ======================================================= -->
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/raphael-min.js"></script>
+  <script src="assets/js/jquery.easing.1.3.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/google-code-prettify/prettify.js"></script>
+  <script src="assets/js/jquery.elastislide.js"></script>
+  <script src="assets/js/jquery.prettyPhoto.js"></script>
+  <script src="assets/js/jquery.flexslider.js"></script>
+  <script src="assets/js/jquery-hover-effect.js"></script>
+  <script src="assets/js/animate.js"></script>
+
+  <!-- Template Custom JavaScript File -->
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/SENG5.js"></script>
+
   <script type="text/javascript">
       function userCheck(){
-        var htmlString="<?php echo $htmlString; ?>";
-        alert(htmlString);
+        var userType="<?php echo $htmlString; ?>";
+        showAdmin(0);
       }
   </script>
 </head>
@@ -104,8 +119,14 @@
                       <li><a href="post-right-sidebar.html">Post right sidebar</a></li>
                     </ul>
                   </li>
-                  <li>
-                    <a href="contact.html"><i class="icon-envelope-alt"></i> Contact</a>
+                  <li class="dropdown" id="adminMenu">
+                    <a href="#"><i class="icon-book"></i>Admin Menu<i class="icon-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="blog-left-sidebar.html">Assign Users</a></li>
+                      <li><a href="blog-right-sidebar.html">Admin Page</a></li>
+                      <li><a href="post-left-sidebar.html">Admins only cool club</a></li>
+                      <li><a href="post-right-sidebar.html">Admin Store</a></li>
+                    </ul>
                   </li>
                 </ul>
               </nav>
@@ -411,19 +432,7 @@
   <!-- end wrapper -->
   <a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-48 active"></i></a>
 
-  <script src="assets/js/jquery.js"></script>
-  <script src="assets/js/raphael-min.js"></script>
-  <script src="assets/js/jquery.easing.1.3.js"></script>
-  <script src="assets/js/bootstrap.js"></script>
-  <script src="assets/js/google-code-prettify/prettify.js"></script>
-  <script src="assets/js/jquery.elastislide.js"></script>
-  <script src="assets/js/jquery.prettyPhoto.js"></script>
-  <script src="assets/js/jquery.flexslider.js"></script>
-  <script src="assets/js/jquery-hover-effect.js"></script>
-  <script src="assets/js/animate.js"></script>
 
-  <!-- Template Custom JavaScript File -->
-  <script src="assets/js/custom.js"></script>
 
 </body>
 </html>
