@@ -1,7 +1,5 @@
 <?php
     session_start();
-  $htmlString= 'testing';
-    //echo $_SESSION['TYPE'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
