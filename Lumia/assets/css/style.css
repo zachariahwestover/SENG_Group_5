@@ -270,7 +270,9 @@ ul.topnav .dropdown-menu li > a {
 	padding-left:20px;
 }
 
-
+#adminMenu{
+	display: none;
+}
 nav select {
 	display:none;
 }
