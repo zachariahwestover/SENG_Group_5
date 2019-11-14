@@ -51,8 +51,11 @@
 
   <script type="text/javascript">
       function userCheck(){
-        var userType="<?php echo $htmlString; ?>";
-        showAdmin(0);
+        var userType="<?php echo $_SESSION['TYPE']; ?>";
+        userType = parseInt(userType);
+        if(userType == 5){
+          showAdmin();
+        }
       }
   </script>
 </head>
