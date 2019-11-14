@@ -118,19 +118,23 @@
     <section id="maincontent">
 	  <div class="container">
 	    <h4>Submit a paper</h4>
-	    <form action="" method="post" class="comment-form" name="comment-form">
+	    <form action="submissions.php" method="post" class="comment-form" name="comment-form">
 		  <div class="row">
 		    <div class="span4">
-			  <label>Name <span>*</span></label>
-			  <input type="text" class="input-block-level" placeholder="Your name" />
+			  <label>First Name <span>*</span></label>
+			  <input type="text" name="FName" class="input-block-level" placeholder="Your name" />
+		    </div>
+		    <div class="span4">
+			  <label>Last Name <span>*</span></label>
+			  <input type="text" name="LName" class="input-block-level" placeholder="Your name" />
 		    </div>
 		    <div class="span4">
 			  <label>Email <span>*</span></label>
-			  <input type="text" class="input-block-level" placeholder="Your email" />
+			  <input type="text" name="Email" class="input-block-level" placeholder="Your email" />
 		    </div>
 		    <div class="span8">
 			  <label>Paper <span>*</span></label>
-			  <input type="file" class="input-block-level"/>
+			  <input type="file" name="Paper" class="input-block-level"/>
 			  <button class="btn btn-theme" type="submit">Submit Paper</button>
 		    </div>
 		  </div>
