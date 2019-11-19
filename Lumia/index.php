@@ -58,9 +58,7 @@ if (isset($_POST['username']) && isset($_POST['password']))
       
       
     
-      if($result2 -> num_rows > 0)
           {
-              while ($row = $result2->fetch_assoc()) {
                   $_SESSION['TYPE'] = $row["Type"];
                   //echo $_SESSION['TYPE'];
               }
