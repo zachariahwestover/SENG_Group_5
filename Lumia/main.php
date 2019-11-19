@@ -120,6 +120,7 @@
                       <li><a href="post-right-sidebar.html">Post right sidebar</a></li>
                     </ul>
                   </li>
+
                   <li class="dropdown" id="adminMenu">
                     <a href="#"><i class="icon-book"></i>Admin Menu<i class="icon-angle-down"></i></a>
                     <ul class="dropdown-menu">
@@ -128,6 +129,15 @@
                       <li><a href="post-left-sidebar.html">Admins only cool club</a></li>
                       <li><a href="post-right-sidebar.html">Admin Store</a></li>
                     </ul>
+                  </li>
+                  <li class="dropdown">
+                    <?php
+                      if(isset($_SESSION['USERID'])){
+                        echo '<a href="logout.php"><i class="icon-lock"></i> Logout </a>';
+                      }else{
+                        echo '<a href="index.php"><i class="icon-key"></i> Login </a>';
+                      }
+                    ?>
                   </li>
                 </ul>
               </nav>
