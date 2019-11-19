@@ -1,5 +1,15 @@
 <?php
     session_start();
+    echo $_SESSION['USERID'];
+    function LogOut(){
+          unset($_SESSION['USERID']);
+          unset($_SESSION['TYPE']);
+          session_destroy();
+    }
+
+    if (isset($_GET['logout'])) {
+    LogOut();
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,6 +67,7 @@
           showAdmin();
         }
       }
+
   </script>
 </head>
 
