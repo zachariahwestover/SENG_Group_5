@@ -2,12 +2,12 @@
 session_start();
 
 //if user submits a username and password
-if (isset($_POST['userid']) && isset($_POST['password']))
+if (isset($_POST['username']) && isset($_POST['password']))
 {
   //asign username and password values. NOTE: this won't be done until the database is complete
   // if the user has just tried to log in
-  $userid = 'Username';//$_POST['userid'];
-  $password = 'Password';//$_POST['password'];
+  $username = $_POST['username'];
+  $password = sha1($_POST['password']);
 
   //connects to the sql server
   $db_conn = new mysqli('68.178.217.43', 'paigeweber', 'Bison51#', 'paigeweber');
@@ -19,31 +19,94 @@ if (isset($_POST['userid']) && isset($_POST['password']))
   }
 
   //this is sent to the server to ask about the username and password
-  $query = "select * from Login where
-            Username='".$userid."' and
-            Password=sha1('".$password."')";
+    //echo $username;
+    //echo $password;
+    
+    //e605dbe386d539f6d1ac1efc8ea48437cac0d178
+    
+    
+    
+  $query = "select * from User where Username = '".$username."' and Password = '".$password."';";
 
   //sends the database server the above information about username and password store the response in result
   $result = $db_conn->query($query);
+    //echo mysqli_result($result, 2);
+    //echo "nummmmmmmsbruh";
+    //echo $result -> num_rows;
+    
+       // if($result -> num_rows > 0)
+     //{
+       //  while ($row = $result->fetch_assoc()) {
+         //    $field1name = $row["Username"];
+           //  $field2name = $row["Password"];
+             //echo '<tr>
+             //<td>'.$field1name.'</td>
+             //<td>'.$field2name.'</td>
+             //</tr>';
+         //}
+     //}
 
   //if the result returns valid user, start a session with a valid user
   if ($result->num_rows)
   {
     // if they are in the database register the user id
-    $_SESSION['valid_user'] = $userid;
+    $_SESSION['valid_user'] = $username;
+      
+      //pull from database usertype
+      $query2 = "select UserID from User where Username = '".$username."' and Password = '".$password."';";
+      $query3 = "select Type from User where Username = '".$username."' and Password = '".$password."';";
+      
+      $result2 = $db_conn->query($query2);
+      $result3 = $db_conn->query($query3);
+      
+      if($result2 -> num_rows > 0)
+      {
+          while ($row = $result2->fetch_assoc()) {
+              $_SESSION['USERID'] = $row["UserID"];
+              //echo $_SESSION['TYPE'];
+          }
+      }
+      
+    
+      if($result3 -> num_rows > 0)
+          {
+              while ($row = $result3->fetch_assoc()) {
+                  $_SESSION['TYPE'] = $row["Type"];
+                  //echo $_SESSION['TYPE'];
+              }
+          }
+      
+      
+      
+      
+    
+      header("Location: main.php");
+      //echo "Session created";
   }
+    
+    
+    //if the user gets the right username and password
+      //echo "Session val: ";
+      //echo $_SESSION['valid_user'];
+
+    
+      if (isset($userid))
+      {
+        // if they've tried and failed to log in
+        echo '<p>Could not log you in.</p>';
+      }
   $db_conn->close();
 }
 ?>
 <!DOCTYPE html>
 <html>
   <style>
-    #loginform {
+    .loginform {
       width:80%;
       margin-left:auto;
       margin-right:auto;
     }
-    #specialLoginForm{
+    .specialLoginForm{
       width:30%;
       margin-left:35%;
     }
@@ -123,49 +186,27 @@ if (isset($_POST['userid']) && isset($_POST['password']))
 
 </head>
 <body>
+<form action="index.php" method="post" class="loginform">
+   
+<fieldset>
+   <legend>Login</legend>
+   <br><br><br><br><br><br><br>
+   <p><label for="username" class="specialLoginForm">Username:</label>
+   <input type="text" name="username" class="specialLoginForm" size="30"/></p>
+   <p><label for="password" class="specialLoginForm">Password:</label>
+   <input type="password" name="password" class="specialLoginForm" size="30"/></p>
+   </fieldset>
+     
+<button type="submit" class="specialLoginForm" name="login">Login</button>
+<br><br><br>
 
-<?php
+</form>
 
-  //if the user gets the right username and password
-  if (isset($_SESSION['valid_user']))
-  {
-    //echo '<p>You are logged in as: '.$_SESSION['valid_user'].' <br />';
-    //echo '<a href="logout.php">Log out</a></p>';
-      
-      // push user to index page once logged in
-      header("Location: index.php");
-  }
-  else
-  {
-    if (isset($userid))
-    {
-      // if they've tried and failed to log in
-      echo '<p>Could not log you in.</p>';
-    }
-    else
-    {
-      // they have not tried to log in yet or have logged out
-     // echo '<p>You are not logged in.</p>';
-    }
+<form action="register.html" class="loginform" >
+<input type="submit" class="specialLoginForm" value="Register for an Account">
+</form>
 
-    // provide form to log in
-    //this is where the html goes to
-    
-    echo '<form action="login.php" method="post" id="loginform">';
-    
-    echo '<fieldset>';
-    echo '<legend>Login</legend>';
-    echo '<br><br><br><br><br><br><br>';
-    echo '<p><label for="userid" id="specialLoginForm">UserID:</label>';
-    echo '<input type="text" name="userid" id="specialLoginForm" size="30"/></p>';
-    echo '<p><label for="password" id="specialLoginForm">Password:</label>';
-    echo '<input type="password" name="password" id="specialLoginForm" size="30"/></p>';    
-    echo '</fieldset>';
-    echo '<button type="submit" id="specialLoginForm" name="login">Login</button>';
-    echo '</form>';
 
-  }
-?>
 
 <br><br><br><br><br><br><br><br><br><br><br>
 
@@ -190,10 +231,10 @@ if (isset($_POST['userid']) && isset($_POST['password']))
             <div class="widget">
               <h5>How to find us</h5>
               <address>
-								<i class="icon-home"></i> <strong>Lipscomb University</strong><br>
-								X104 Awesome ville, Suite AB12<br>
-								Jakarta 12420 Indonesia
-								</address>
+                                <i class="icon-home"></i> <strong>Lipscomb University</strong><br>
+                                X104 Awesome ville, Suite AB12<br>
+                                Jakarta 12420 Indonesia
+                                </address>
               <p>
                 <i class="icon-phone"></i> (123) 456-7890 - (123) 555-8890<br>
                 <i class="icon-envelope-alt"></i> email@domainname.com
@@ -237,3 +278,4 @@ if (isset($_POST['userid']) && isset($_POST['password']))
       </div>
     </footer>
 </html>
+

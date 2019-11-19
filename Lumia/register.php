@@ -4,21 +4,18 @@ $Lname = $_POST['Lname'];
 $Type = (int)$_POST['Type'];
 $eMail = $_POST['eMail'];
 $Username = $_POST['Username'];
-$Password = $_POST['Password'];
-    
-    echo $Fname;
-    echo $Lname;
-    echo $Type;
-    echo $eMail;
-    echo $Username;
-    echo $Password;
+$Password = sha1($_POST['Password']);
     
   $db = new mysqli('68.178.217.43', 'paigeweber', 'Bison51#', 'paigeweber');
-
-  if (mysqli_connect_errno()) {
+  if(!mysqli_connect_errno())
+    {
+         header("Location: index.php");
+    }
+  else
+    {
     echo 'Connection to database failed:'.mysqli_connect_error();
     exit();
-  }
+    }
     
     
     // PROBLEM HERE, getting the correct values but insert statement is not working
@@ -26,11 +23,15 @@ $Password = $_POST['Password'];
     // database login: go to this link https://p3nlmysqladm002.secureserver.net/grid55/203/index.php
     // username: paigeweber , password: Bison51#
     
-    $query = "INSERT INTO User(Fname, Lname, Type, eMail, Username, Password) VALUES (?, ?, ?, ?, ?, ?)";
+    $query = "INSERT INTO User(Fname, Lname, Type, eMail, Username, Password) VALUES (?, ?, ?, ?, ?, ?);";
        $stmt = $db->prepare($query);
        $stmt->bind_param('ssssss', $Fname, $Lname, $Type, $eMail, $Username, $Password);
        $stmt->execute();
     //----------------------
        $db->close();
+    
+    
+   
+
 ?>
 

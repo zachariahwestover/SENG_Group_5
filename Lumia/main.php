@@ -1,5 +1,5 @@
 <?php
-  $htmlString= 'testing';
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,10 +34,28 @@
     Author: BootstrapMade.com
     Author URL: https://bootstrapmade.com
   ======================================================= -->
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/raphael-min.js"></script>
+  <script src="assets/js/jquery.easing.1.3.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/google-code-prettify/prettify.js"></script>
+  <script src="assets/js/jquery.elastislide.js"></script>
+  <script src="assets/js/jquery.prettyPhoto.js"></script>
+  <script src="assets/js/jquery.flexslider.js"></script>
+  <script src="assets/js/jquery-hover-effect.js"></script>
+  <script src="assets/js/animate.js"></script>
+
+  <!-- Template Custom JavaScript File -->
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/SENG5.js"></script>
+
   <script type="text/javascript">
       function userCheck(){
-        var htmlString="<?php echo $htmlString; ?>";
-        alert(htmlString);
+        var userType="<?php echo $_SESSION['TYPE']; ?>";
+        userType = parseInt(userType);
+        if(userType == 5){
+          showAdmin();
+        }
       }
   </script>
 </head>
@@ -102,8 +120,24 @@
                       <li><a href="post-right-sidebar.html">Post right sidebar</a></li>
                     </ul>
                   </li>
-                  <li>
-                    <a href="contact.html"><i class="icon-envelope-alt"></i> Contact</a>
+
+                  <li class="dropdown" id="adminMenu">
+                    <a href="#"><i class="icon-book"></i>Admin Menu<i class="icon-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="blog-left-sidebar.html">Assign Users</a></li>
+                      <li><a href="blog-right-sidebar.html">Admin Page</a></li>
+                      <li><a href="post-left-sidebar.html">Admins only cool club</a></li>
+                      <li><a href="post-right-sidebar.html">Admin Store</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown">
+                    <?php
+                      if(isset($_SESSION['USERID'])){
+                        echo '<a href="logout.php"><i class="icon-lock"></i> Logout </a>';
+                      }else{
+                        echo '<a href="index.php"><i class="icon-key"></i> Login </a>';
+                      }
+                    ?>
                   </li>
                 </ul>
               </nav>
@@ -164,7 +198,7 @@
                 </p>
               </div>
               <div class="cta">
-                <a class="btn btn-large btn-theme" href="#">
+                <a class="btn btn-large btn-theme" href="submissions.html">
 							<i class="icon-edit icon-white"></i> Submit </a>
               </div>
 
@@ -409,19 +443,7 @@
   <!-- end wrapper -->
   <a href="#" class="scrollup"><i class="icon-chevron-up icon-square icon-48 active"></i></a>
 
-  <script src="assets/js/jquery.js"></script>
-  <script src="assets/js/raphael-min.js"></script>
-  <script src="assets/js/jquery.easing.1.3.js"></script>
-  <script src="assets/js/bootstrap.js"></script>
-  <script src="assets/js/google-code-prettify/prettify.js"></script>
-  <script src="assets/js/jquery.elastislide.js"></script>
-  <script src="assets/js/jquery.prettyPhoto.js"></script>
-  <script src="assets/js/jquery.flexslider.js"></script>
-  <script src="assets/js/jquery-hover-effect.js"></script>
-  <script src="assets/js/animate.js"></script>
 
-  <!-- Template Custom JavaScript File -->
-  <script src="assets/js/custom.js"></script>
 
 </body>
 </html>

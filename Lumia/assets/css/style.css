@@ -112,7 +112,7 @@ header .navbar .logo {
 /* navigation */
 header .navbar {
 	padding:30px 0 25px;
-	
+
 }
 
 .navigation{
@@ -123,7 +123,7 @@ header .navbar {
 
 .navbar .nav {
 	margin:0;
-	
+
 }
 
 .navbar ul li {
@@ -132,6 +132,14 @@ header .navbar {
 
 .navbar ul li li {
 	margin-right:0;
+}
+
+.navbar .nav li a:hover {
+	background:#181818;
+	color:#fff;
+  -webkit-border-radius: 2px;
+     -moz-border-radius: 2px;
+          border-radius: 2px;
 }
 
 .navbar .nav li a:hover {
@@ -270,7 +278,9 @@ ul.topnav .dropdown-menu li > a {
 	padding-left:20px;
 }
 
-
+#adminMenu{
+	display: none;
+}
 nav select {
 	display:none;
 }
