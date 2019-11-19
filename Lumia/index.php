@@ -53,7 +53,6 @@ if (isset($_POST['username']) && isset($_POST['password']))
     $_SESSION['valid_user'] = $username;
       
       //pull from database usertype
-      $query2 = "select Type from User where Username = '".$username."' and Password = '".$password."';";
       
       $result2 = $db_conn->query($query2);
       

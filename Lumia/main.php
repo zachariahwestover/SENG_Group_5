@@ -188,7 +188,6 @@
                 </p>
               </div>
               <div class="cta">
-                <a class="btn btn-large btn-theme" href="#">
 							<i class="icon-edit icon-white"></i> Submit </a>
               </div>
 
