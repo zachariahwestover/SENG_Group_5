@@ -53,12 +53,24 @@ if (isset($_POST['username']) && isset($_POST['password']))
     $_SESSION['valid_user'] = $username;
       
       //pull from database usertype
+      $query2 = "select UserID from User where Username = '".$username."' and Password = '".$password."';";
+      $query3 = "select Type from User where Username = '".$username."' and Password = '".$password."';";
       
       $result2 = $db_conn->query($query2);
+      $result3 = $db_conn->query($query3);
       
+      if($result2 -> num_rows > 0)
+      {
+          while ($row = $result2->fetch_assoc()) {
+              $_SESSION['USERID'] = $row["UserID"];
+              //echo $_SESSION['TYPE'];
+          }
+      }
       
     
+      if($result3 -> num_rows > 0)
           {
+              while ($row = $result3->fetch_assoc()) {
                   $_SESSION['TYPE'] = $row["Type"];
                   //echo $_SESSION['TYPE'];
               }
