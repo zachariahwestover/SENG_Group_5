@@ -1,5 +1,15 @@
 <?php
     session_start();
+    echo $_SESSION['USERID'];
+    function LogOut(){
+          unset($_SESSION['USERID']);
+          unset($_SESSION['TYPE']);
+          session_destroy();
+    }
+
+    if (isset($_GET['logout'])) {
+    LogOut();
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,6 +67,7 @@
           showAdmin();
         }
       }
+
   </script>
 </head>
 
@@ -133,7 +144,7 @@
                   <li class="dropdown">
                     <?php
                       if(isset($_SESSION['USERID'])){
-                        echo '<a href="logout.php"><i class="icon-lock"></i> Logout </a>';
+                        echo '<a href="main.php?logout=true" onclick="LogOut()"><i class="icon-lock"></i> Logout </a>';
                       }else{
                         echo '<a href="index.php"><i class="icon-key"></i> Login </a>';
                       }
