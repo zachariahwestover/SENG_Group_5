@@ -3,14 +3,8 @@
 <head>
    <title>Home Page</title>
     <style type="text/css">
-      fieldset {
-         width: 50%;
-         border: 2px solid #ff0000;
-      }
-      legend {
-         font-weight: bold;
-         font-size: 125%;
-      }
+      
+      
       label {
          width: 125px;
          float: left;
@@ -24,13 +18,19 @@
       button {
          margin-top: 12px;
       }
+      .slf{
+        width:80%;
+        margin-left:auto;
+        margin-right:auto;
+        
+      }
       .LoginForm {
       width:150px;
       margin-left:40%;
     }
     .specialLoginForm{
-      width:250px;
-      margin-left:80%;
+      width:40%;
+      margin-left:27%;
     }
     </style>
     <title>Registration Page</title>
@@ -50,7 +50,7 @@
         <div class="container">
           <!-- logo -->
           <div class="logo">
-            <a href="index.html"><img src="assets/img/lipscomb-logo.png" width=250 height=100 alt="" /></a>
+            <a href="main.php"><img src="assets/img/lipscomb-logo.png" width=250 height=100 alt="" /></a>
           </div>
           <!-- end logo -->
 
@@ -59,7 +59,7 @@
             <nav>
               <ul class="nav topnav">
                 <li class="active">
-                  <a href="index.html"><i class="icon-home"></i> Home </a>
+                  <a href="main.php"><i class="icon-home"></i> Home </a>
                 </li>
                 <li class="dropdown">
                   <a href="#"><i class="icon-calendar"></i> Events <i class="icon-angle-down"></i></a>
@@ -107,7 +107,7 @@
 </head>
 <body>
    <form action="register.php" method="post">
-   <fieldset>
+   <fieldset class="specialLoginForm">
     <legend>Register</legend>
     
     <p><label for="Username" class="specialLoginForm">Username:</label>
