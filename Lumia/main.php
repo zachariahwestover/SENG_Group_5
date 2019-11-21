@@ -1,6 +1,6 @@
 <?php
     session_start();
-    echo $_SESSION['USERID'];
+
     function LogOut(){
           unset($_SESSION['USERID']);
           unset($_SESSION['TYPE']);
