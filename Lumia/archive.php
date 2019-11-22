@@ -36,6 +36,15 @@
     Author: BootstrapMade.com
     Author URL: https://bootstrapmade.com
   ======================================================= -->
+  <script>
+    function confirmDelete(n){
+      var x = confirm("Are you sure you want to delete this submission? The action cannot be undone.");
+      if(x == true){
+        var url = "deletePaper.php?PaperID=" + n;
+        window.location.href = url;
+      }
+    }
+  </script>
 </head>
 
 
@@ -184,9 +193,9 @@
                               <td>'.$field2name.'</td>
                               <td>'.$field4name.'</td>
                               <td>'.'<a href='.'download.php?nama='.$field3name.'>download</a></td>
-                              <td><a href="deletePaper.php?PaperID=' . $field6name . '">x</a></td>
+                              <td><button type="button" id="'. $field6name . '" onclick="confirmDelete(this.id)">x</button></td>
                               </tr>';
-
+                              //<td><a href="deletePaper.php?PaperID=' . $field6name . '">x</a></td>
                             }
                         }
 
