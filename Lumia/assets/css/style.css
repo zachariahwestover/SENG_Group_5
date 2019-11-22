@@ -54,7 +54,14 @@ a i:hover {
 	-o-box-shadow: 0 1px 4px rgba(0,0,0,.2);
 }
 */
-
+table{
+	width:100%;
+	text-align: left;
+}
+td, th{
+	border-bottom: 1px solid #ddd;
+	text-align: left;
+}
 /* custom template style */
 .well {
 	overflow:hidden;
