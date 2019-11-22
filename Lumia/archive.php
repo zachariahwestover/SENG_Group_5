@@ -1,3 +1,8 @@
+<?php
+  session_start();
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -155,50 +160,37 @@
                     <th>Remove</th>
                   </tr>
                   <?php
+                  $db = new mysqli('68.178.217.43', 'paigeweber', 'Bison51#', 'paigeweber');
+                  if(mysqli_connect_errno())
+                    {
+                        echo 'Connection to database failed:'.mysqli_connect_error();
+                        exit();
+                    }
 
                   $query = "SELECT * FROM Papers";
+                      $result = $db-> query($query);
+                      if($result -> num_rows > 0)
+                      {
+                          while ($row = $result->fetch_assoc()) {
+                              $field1name = $row["Title"];
+                              $field2name = $row["Author"];
+                              $field3name = $row["Paper"];
+                              $field4name = $row["ReviewerID"];
+                              $field5name = $row["UserID"];
+                              $field6name = $row["PaperID"];
+                              echo '<tr>
+                              <td>'.$field4name.'</td>
+                              <td>'.$field1name.'</td>
+                              <td>'.$field2name.'</td>
+                              <td>'.$field4name.'</td>
+                              <td>'.'<a href='.'download.php?nama='.$field3name.'>download</a></td>
+                              <td><a href=\"deletePaper.php?PaperID=' . $field6name . '\">x</a></td>
+                              </tr>';
+
+                            }
+                        }
 
 
-                  echo '<table border="1" cellspacing="10" cellpadding="2">
-                  <tr>
-                  <td style="text-align: center;"> <font face="Arial">ReservationID</font> </td>
-                  <td style="text-align: center;"> <font face="Arial">UserID</font> </td>
-                  <td style="text-align: center;"> <font face="Arial">Date</font> </td>
-                  <td style="text-align: center;"> <font face="Arial">Address</font> </td>
-                  <td style="text-align: center;"> <font face="Arial">LocationName</font> </td>
-                  <td style="text-align: center;"> <font face="Arial">Price($)</font> </td>
-                  </tr>';
-
-                  $result = $db-> query($query);
-
-                  if($result -> num_rows > 0)
-                  {
-                      while ($row = $result->fetch_assoc()) {
-                          $field1name = $row["ReservationID"];
-                          $field2name = $row["UserID"];
-                          $field3name = $row["Date"];
-                          $field4name = $row["Address"];
-                          $field5name = $row["LocationName"];
-                          $field6name = $row["Price"];
-
-                          echo '<tr>
-                          <td>'.$field1name.'</td>
-                          <td>'.$field2name.'</td>
-                          <td>'.$field3name.'</td>
-                          <td>'.$field4name.'</td>
-                          <td>'.$field5name.'</td>
-                          <td>'.$field6name.'</td>
-                          </tr>';
-                      }
-                  }
-                  echo"
-
-                  <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                  </tr>
-                  "
                   ?>
                 </table>
               </div>
