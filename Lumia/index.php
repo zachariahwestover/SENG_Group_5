@@ -137,20 +137,20 @@ if (isset($_POST['username']) && isset($_POST['password']))
             <div class="navigation">
               <nav>
                 <ul class="nav topnav">
-                  <li class="active">
+                  <li>
                     <a href="main.php"><i class="icon-home"></i> Home </a>
                   </li>
                   <li><!-- TODO: Make a Events Paige -->
-                    <a href="#"><i class="icon-envelope-alt"></i> Events</a>
+                    <a href="#"><i class="icon-calendar"></i> Events</a>
                   </li>
                   <li><!-- TODO: Make a Sponsors Paige -->
-                    <a href="#"><i class="icon-envelope-alt"></i> Sponsors</a>
+                    <a href="#"><i class="icon-money"></i> Sponsors</a>
                   </li>
                   <li>
-                    <a href="submit.php"><i class="icon-envelope-alt"></i> Submissions</a>
+                    <a href="submit.php"><i class="icon-pencil"></i> Submissions</a>
                   </li>
 				  <li>
-                    <a href="contact.html"><i class="icon-envelope-alt"></i> Contact</a>
+                    <a href="contact.php"><i class="icon-envelope-alt"></i> Contact</a>
                   </li>
                 </ul>
               </nav>
@@ -200,7 +200,7 @@ if (isset($_POST['username']) && isset($_POST['password']))
 				</address>
               <p>
                 <i class="icon-phone"></i> (615) 966-5082 ext. 5082<br>
-                <i class="icon-envelope-alt"></i> chris.simmons@mail.lipscomb.com
+                <i class="icon-envelope-alt"></i> chris.simmons@mail.lipscomb.edu
               </p>
             </div>
             <div class="widget">
