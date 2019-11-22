@@ -1,6 +1,6 @@
 <?php
     session_start();
-    echo $_SESSION['USERID'];
+
     function LogOut(){
           unset($_SESSION['USERID']);
           unset($_SESSION['TYPE']);
@@ -82,7 +82,7 @@
           <div class="container">
             <!-- logo -->
             <div class="logo">
-              <a href="index.html"><img src="assets/img/lipscomb-logo.png" alt="" /></a>
+              <a href="main.php"><img src="assets/img/lipscomb-logo.png" alt="" /></a>
             </div>
             <!-- end logo -->
 
@@ -91,47 +91,20 @@
               <nav>
                 <ul class="nav topnav">
                   <li class="active">
-                    <a href="index.html"><i class="icon-home"></i> Home </a>
+                    <a href="main.php"><i class="icon-home"></i> Home </a>
                   </li>
-                  <li class="dropdown">
-                    <a href="#"><i class="icon-calendar"></i> Events <i class="icon-angle-down"></i></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="media.html">Media</a></li>
-                      <li><a href="color-scheme.html">10 Theme colors</a></li>
-                      <li><a href="buttons.html">Buttons</a></li>
-                      <li><a href="components.html">Components</a></li>
-                      <li><a href="animations.html">56 Animations</a></li>
-                      <li><a href="icons.html">Icons</a></li>
-                      <li><a href="icon-variations.html">Icon variations</a></li>
-                      <li class="dropdown"><a href="#">3rd level <i class="icon-angle-right"></i></a>
-                        <ul class="dropdown-menu sub-menu">
-                          <li><a href="#">Example menu</a></li>
-                          <li><a href="#">Example menu</a></li>
-                          <li><a href="#">Example menu</a></li>
-                        </ul>
-                      </li>
-                    </ul>
+                  <li><!-- TODO: Make a Events Paige -->
+                    <a href="#"><i class="icon-calendar"></i> Events</a>
                   </li>
-
-                  <li class="dropdown">
-                    <a href="#"><i class="icon-money"></i> Sponsors <i class="icon-angle-down"></i></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="portfolio-2cols.html">Portfolio 2 columns</a></li>
-                      <li><a href="portfolio-3cols.html">Portfolio 3 columns</a></li>
-                      <li><a href="portfolio-4cols.html">Portfolio 4 columns</a></li>
-                      <li><a href="portfolio-detail.html">Portfolio detail</a></li>
-                    </ul>
+                  <li><!-- TODO: Make a Sponsors Paige -->
+                    <a href="#"><i class="icon-money"></i> Sponsors</a>
                   </li>
-                  <li class="dropdown">
-                    <a href="#"><i class="icon-book"></i> Submissions <i class="icon-angle-down"></i></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-                      <li><a href="blog-right-sidebar.html">Blog right sidebar</a></li>
-                      <li><a href="post-left-sidebar.html">Post left sidebar</a></li>
-                      <li><a href="post-right-sidebar.html">Post right sidebar</a></li>
-                    </ul>
+                  <li>
+                    <a href="submit.php"><i class="icon-pencil"></i> Submissions</a>
                   </li>
-
+				  <li>
+                    <a href="contact.php"><i class="icon-envelope-alt"></i> Contact</a>
+                  </li>
                   <li class="dropdown" id="adminMenu">
                     <a href="#"><i class="icon-book"></i>Admin Menu<i class="icon-angle-down"></i></a>
                     <ul class="dropdown-menu">
@@ -141,7 +114,7 @@
                       <li><a href="post-right-sidebar.html">Admin Store</a></li>
                     </ul>
                   </li>
-                  <li class="dropdown">
+                  <li>
                     <?php
                       if(isset($_SESSION['USERID'])){
                         echo '<a href="main.php?logout=true" onclick="LogOut()"><i class="icon-lock"></i> Logout </a>';
@@ -209,7 +182,7 @@
                 </p>
               </div>
               <div class="cta">
-                <a class="btn btn-large btn-theme" href="submissions.html">
+                <a class="btn btn-large btn-theme" href="submit.php">
 							<i class="icon-edit icon-white"></i> Submit </a>
               </div>
 
@@ -388,28 +361,15 @@
         <div class="row">
           <div class="span4">
             <div class="widget">
-              <h5>Interesting pages</h5>
-              <ul class="regular">
-                <li><a href="#">About our company</a></li>
-                <li><a href="#">How we do all stuff</a></li>
-                <li><a href="#">Our recent works</a></li>
-                <li><a href="#">Press releases</a></li>
-                <li><a href="#">Get in touch with us</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="span4">
-            <div class="widget">
               <h5>How to find us</h5>
               <address>
-								<i class="icon-home"></i> <strong>Lipscomb University</strong><br>
-								X104 Awesome ville, Suite AB12<br>
-								Jakarta 12420 Indonesia
-								</address>
+				<i class="icon-home"></i> <strong>Lipscomb University</strong><br>
+				One University Park Drive<br>
+				Nashville, TN 37204
+				</address>
               <p>
-                <i class="icon-phone"></i> (123) 456-7890 - (123) 555-8890<br>
-                <i class="icon-envelope-alt"></i> email@domainname.com
+                <i class="icon-phone"></i> (615) 966-5082 ext. 5082<br>
+                <i class="icon-envelope-alt"></i> chris.simmons@mail.lipscomb.edu
               </p>
             </div>
             <div class="widget">
