@@ -44,6 +44,10 @@
         window.location.href = url;
       }
     }
+    function assign(n){
+      var url = "assignReviewer.php?PaperID=" + n;
+      window.location.href = url;
+    }
   </script>
 </head>
 
@@ -115,7 +119,7 @@
         </div>
       </div>
       </header>
-      
+
       <section id="maincontent">
         <div class="container">
           <div class="row">
@@ -151,11 +155,19 @@
                               $field4name = $row["ReviewerID"];
                               $field5name = $row["UserID"];
                               $field6name = $row["PaperID"];
+
                               echo '<tr>
                               <td>'.$field5name.'</td>
                               <td>'.$field1name.'</td>
-                              <td>'.$field2name.'</td>
-                              <td>'.$field4name.'</td>
+                              <td>'.$field2name.'</td>';
+
+                              if($field4name == ""){
+                                echo'<td><button type="button" id="'. $field6name . '" onclick="assign(this.id)">Assign</button></td>';
+                              }else{
+                                echo '<td>'.$field4name.'</td>';
+                              }
+
+                              echo'
                               <td>'.'<a href='.'download.php?nama='.$field3name.'>download</a></td>
                               <td><button type="button" id="'. $field6name . '" onclick="confirmDelete(this.id)">x</button></td>
                               </tr>';
