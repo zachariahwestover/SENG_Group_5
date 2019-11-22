@@ -1,8 +1,15 @@
 <?php
 
-$PaperID = $_GET['PaperID'];
+$db = new mysqli('68.178.217.43', 'paigeweber', 'Bison51#', 'paigeweber');
+if(mysqli_connect_errno())
+  {
+      echo 'Connection to database failed:'.mysqli_connect_error();
+      exit();
+  }
 
-   $checkQuery = "select * from Papers where PaperID = '".$PaperID.";";
+$PaperID = $_GET['PaperID'];
+echo $PaperID;
+   $checkQuery = "select * from Papers where PaperID = ".$PaperID.";";
 
     $checkResult = $db->query($checkQuery);
 
@@ -14,13 +21,13 @@ $PaperID = $_GET['PaperID'];
 
         {
 
-            $query = "delete from Papers where PaperID = '".$PaperID.";";
+            $query = "delete from Papers where PaperID = ".$PaperID.";";
 
             //run the query and store in $result
 
             $result = $db->query($query);
 
-            
+
 
             //lets you know how many rows were inserted into the database or an error if there was an error
 
@@ -34,7 +41,7 @@ $PaperID = $_GET['PaperID'];
 
         }
 
-        
+
 
     }
 
@@ -45,5 +52,5 @@ $PaperID = $_GET['PaperID'];
         echo "An error has occurred. No changes were made.";
 
     }
-    
+
 ?>

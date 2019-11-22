@@ -179,12 +179,12 @@
                               $field5name = $row["UserID"];
                               $field6name = $row["PaperID"];
                               echo '<tr>
-                              <td>'.$field4name.'</td>
+                              <td>'.$field5name.'</td>
                               <td>'.$field1name.'</td>
                               <td>'.$field2name.'</td>
                               <td>'.$field4name.'</td>
                               <td>'.'<a href='.'download.php?nama='.$field3name.'>download</a></td>
-                              <td><a href=\"deletePaper.php?PaperID=' . $field6name . '\">x</a></td>
+                              <td><a href="deletePaper.php?PaperID=' . $field6name . '">x</a></td>
                               </tr>';
 
                             }
