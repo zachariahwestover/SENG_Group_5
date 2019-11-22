@@ -51,7 +51,7 @@
             <div class="navigation">
               <nav>
                 <ul class="nav topnav">
-                  <li class="active">
+                  <li>
                     <a href="main.php"><i class="icon-home"></i> Home </a>
                   </li>
                   <li><!-- TODO: Make a Events Paige -->
@@ -63,7 +63,7 @@
                   <li>
                     <a href="submit.php"><i class="icon-pencil"></i> Submissions</a>
                   </li>
-				  <li>
+				  <li class="active">
                     <a href="contact.php"><i class="icon-envelope-alt"></i> Contact</a>
                   </li>
                   <li class="dropdown" id="adminMenu">
