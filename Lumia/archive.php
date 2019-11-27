@@ -156,20 +156,34 @@
                               $field5name = $row["UserID"];
                               $field6name = $row["PaperID"];
 
+                              $pQuery = "SELECT * FROM User WHERE UserID = " . $field5name;
+                              $presentor = $db-> query($pQuery);
+                              $presentor = $presentor->fetch_assoc();
+                              $pLNAME = $presentor["Lname"];
+                              $pFNAME = $presentor["Fname"];
+
+                              if($field4name != ""){
+                                $rQuery = "SELECT * FROM User WHERE UserID = " . $field4name;
+                                $reviewer = $db-> query($rQuery);
+                                $reviewer = $reviewer->fetch_assoc();
+                                $rLNAME = $reviewer["Lname"];
+                                $rFNAME = $reviewer["Fname"];
+
+                              }
                               echo '<tr>
-                              <td>'.$field5name.'</td>
+                              <td>'.$pLNAME.', '.$pFNAME.'</td>
                               <td>'.$field1name.'</td>
                               <td>'.$field2name.'</td>';
 
                               if($field4name == ""){
                                 echo'<td><button type="button" id="'. $field6name . '" onclick="assign(this.id)">Assign</button></td>';
                               }else{
-                                echo '<td>'.$field4name.'</td>';
+                                echo '<td>'.$rLNAME.', '.$rFNAME.'</td>';
                               }
 
                               echo'
-                              <td>'.'<a href='.'download.php?nama='.$field3name.'>download</a></td>
-                              <td><button type="button" id="'. $field6name . '" onclick="confirmDelete(this.id)">x</button></td>
+                              <td>'.'<a href='.'download.php?nama='.$field3name.'>Download</a></td>
+                              <td><button type="button" class="remove" id="'. $field6name . '" onclick="confirmDelete(this.id)">x</button></td>
                               </tr>';
                               //<td><a href="deletePaper.php?PaperID=' . $field6name . '">x</a></td>
                             }

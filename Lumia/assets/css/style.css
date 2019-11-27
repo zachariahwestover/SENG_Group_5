@@ -58,9 +58,28 @@ table{
 	width:100%;
 	text-align: left;
 }
-td, th{
+
+tr{
 	border-bottom: 1px solid #ddd;
-	text-align: left;
+	padding-bottom: 2px;
+}
+td, th{
+	text-align: center;
+	padding: 5px 0px;
+}
+
+td button{
+	color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	background: #3498db;
+	text-align: center;
+	margin: auto;
+}
+
+td button.remove{
+	color: #bf383a;
+	background: transparent;
 }
 /* custom template style */
 .well {
