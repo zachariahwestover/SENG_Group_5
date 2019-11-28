@@ -81,6 +81,75 @@ td button.remove{
 	color: #bf383a;
 	background: transparent;
 }
+
+table td i:hover{
+	color: #15c177;
+	border-radius: 4px;
+	border-style: solid;
+	border-color: #15c177;
+}
+
+table td i{
+	padding: 2px;
+	color: black;
+}
+
+#reviewForm{
+	z-index: 3;
+	border-radius: 4px;
+	position: absolute;
+	top: 50%;
+	left:50%;
+	background: white;
+	height: auto;
+	width: 15%;
+	text-align: center;
+	margin-left: -7.5%;
+  /* -1/2 width */
+  margin-top: -12.5%;
+  /* -1/2 height */
+	border: 2px;
+	border-color: #2980b9;
+	border-style: solid;
+	display: none;
+}
+
+#reviewForm select{
+	z-index: 3;
+	width:80%;
+}
+
+#reviewForm input{
+	z-index: 3;
+	border-radius: 4px;
+	background:#3498db;
+	color:white;
+}
+
+#prsntID{
+	display: none;
+}
+
+#errorDiv{
+	background-color:#15c177;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+
+#errorDivF{
+	background-color:#bf383a;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+
+#dismiss{
+	float:right;
+	padding-right: 5px;
+	cursor: pointer;
+	color:white;
+}
 /* custom template style */
 .well {
 	overflow:hidden;

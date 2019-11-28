@@ -108,7 +108,7 @@
                   <li class="dropdown" id="adminMenu">
                     <a href="#"><i class="icon-book"></i>Admin Menu<i class="icon-angle-down"></i></a>
                     <ul class="dropdown-menu">
-                      <li><a href="blog-left-sidebar.html">Assign Users</a></li>
+                      <li><a href="archive.php">Submissions Archive</a></li>
                       <li><a href="blog-right-sidebar.html">Admin Page</a></li>
                       <li><a href="post-left-sidebar.html">Admins only cool club</a></li>
                       <li><a href="post-right-sidebar.html">Admin Store</a></li>

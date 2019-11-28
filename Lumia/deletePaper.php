@@ -8,7 +8,7 @@ if(mysqli_connect_errno())
   }
 
 $PaperID = $_GET['PaperID'];
-echo $PaperID;
+
    $checkQuery = "select * from Papers where PaperID = ".$PaperID.";";
 
     $checkResult = $db->query($checkQuery);
@@ -35,7 +35,7 @@ echo $PaperID;
 
             {
 
-                echo  $db->affected_rows." paper(s) deleted.";
+                header("Location: archive.php?success=true");
 
             }
 
@@ -49,7 +49,7 @@ echo $PaperID;
 
     {
 
-        echo "An error has occurred. No changes were made.";
+        header("Location: archive.php?success=false");
 
     }
 

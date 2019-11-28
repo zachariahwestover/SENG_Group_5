@@ -8,7 +8,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Lumia - Multipurpose responsive bootstrap website template</title>
+  <title>Lipscomb Call for Papers</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="">
@@ -18,17 +18,38 @@
   <link href="assets/css/prettyPhoto.css" rel="stylesheet">
   <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
   <link href="assets/css/flexslider.css" rel="stylesheet">
-
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/color/default.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,600,400italic|Open+Sans:400,600,700" rel="stylesheet">
 
   <!-- fav and touch icons -->
-  <link rel="shortcut icon" href="assets/ico/favicon.ico">
+  <link rel="shortcut icon" href="assets/ico/lipscomb.ico">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
   <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+  <!-- =======================================================
+    Theme Name: Lumia
+    Theme URL: https://bootstrapmade.com/lumia-bootstrap-business-template/
+    Author: BootstrapMade.com
+    Author URL: https://bootstrapmade.com
+  ======================================================= -->
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/raphael-min.js"></script>
+  <script src="assets/js/jquery.easing.1.3.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="assets/js/google-code-prettify/prettify.js"></script>
+  <script src="assets/js/jquery.elastislide.js"></script>
+  <script src="assets/js/jquery.prettyPhoto.js"></script>
+  <script src="assets/js/jquery.flexslider.js"></script>
+  <script src="assets/js/jquery-hover-effect.js"></script>
+  <script src="assets/js/animate.js"></script>
+
+  <!-- Template Custom JavaScript File -->
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/SENG5.js"></script>
 
   <!-- =======================================================
     Theme Name: Lumia
@@ -48,6 +69,20 @@
       var url = "assignReviewer.php?PaperID=" + n;
       window.location.href = url;
     }
+    function showForm(n){
+      document.getElementById("prsntID").value = n;
+      var form = document.getElementById("reviewForm");
+      form.style.display = "block";
+      //console.log(document.getElementById("pID").value);
+    }
+    function hideForm(){
+      var form = document.getElementById("reviewForm");
+      form.style.display = "none";
+    }
+    function dismiss(n){
+      var message = document.getElementById(n);
+      message.style.display = "none";
+    }
   </script>
 </head>
 
@@ -57,68 +92,72 @@
   <body>
     <div id="wrapper">
       <header>
+        <?php
+          if(isset($_GET['success'])){
+            if($_GET['success']== 'true'){
+              echo'<div id="errorDiv"><span>Updated Successfully</span><span id="dismiss" onclick="dismiss(this.parentNode.id)">x</span></div>';
+            }else{
+              echo'<div id="errorDivF"><span>There Was An ERROR</span><span id="dismiss" onclick="dismiss(this.parentNode.id)">x</span></div>';
+            }
+          }
+         ?>
          <!-- Navbar
     ================================================== -->
-      <div class="navbar navbar-static-top">
-        <div class="navbar-inner">
-          <div class="container">
-            <!-- logo -->
-            <div class="logo">
-              <a href="main.php"><img src="assets/img/lipscomb-logo.png" width=200 heigh=40 alt="" /></a>
-            </div>
-            <!-- end logo -->
-
-            <!-- top menu -->
-            <div class="navigation">
-              <nav>
-                <ul class="nav topnav">
-                  <li class="active">
-                    <a href="main.php"><i class="icon-home"></i> Home </a>
-                  </li>
-                  <li class="dropdown">
-                    <a href="#"><i class="icon-calendar"></i> Events <i class="icon-angle-down"></i></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="media.html">Media</a></li>
-                      <li><a href="color-scheme.html">10 Theme colors</a></li>
-                      <li><a href="buttons.html">Buttons</a></li>
-                      <li><a href="components.html">Components</a></li>
-                      <li><a href="animations.html">56 Animations</a></li>
-                      <li><a href="icons.html">Icons</a></li>
-                      <li><a href="icon-variations.html">Icon variations</a></li>
-                      <li class="dropdown"><a href="#">3rd level <i class="icon-angle-right"></i></a>
-                        <ul class="dropdown-menu sub-menu">
-                          <li><a href="#">Example menu</a></li>
-                          <li><a href="#">Example menu</a></li>
-                          <li><a href="#">Example menu</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-
-                  <li class="dropdown">
-                    <a href="#"><i class="icon-money"></i> Sponsors <i class="icon-angle-down"></i></a>
-                    <ul class="dropdown-menu">
-                      <li><a href="portfolio-2cols.html">Portfolio 2 columns</a></li>
-                      <li><a href="portfolio-3cols.html">Portfolio 3 columns</a></li>
-                      <li><a href="portfolio-4cols.html">Portfolio 4 columns</a></li>
-                      <li><a href="portfolio-detail.html">Portfolio detail</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="submissions.html"><i class="icon-phone"></i> Submissions</a>
-                  </li>
-                  <li>
-                    <a href="contact.html"><i class="icon-envelope-alt"></i> Contact</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <!-- end menu -->
-
+    <div class="navbar navbar-static-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <!-- logo -->
+          <div class="logo">
+            <a href="main.php"><img src="assets/img/lipscomb-logo.png" alt="" /></a>
           </div>
+          <!-- end logo -->
+
+          <!-- top menu -->
+          <div class="navigation">
+            <nav>
+              <ul class="nav topnav">
+                <li class="active">
+                  <a href="main.php"><i class="icon-home"></i> Home </a>
+                </li>
+                <li><!-- TODO: Make a Events Paige -->
+                  <a href="#"><i class="icon-calendar"></i> Events</a>
+                </li>
+                <li><!-- TODO: Make a Sponsors Paige -->
+                  <a href="#"><i class="icon-money"></i> Sponsors</a>
+                </li>
+                <li>
+                  <a href="submit.php"><i class="icon-pencil"></i> Submissions</a>
+                </li>
+        <li>
+                  <a href="contact.php"><i class="icon-envelope-alt"></i> Contact</a>
+                </li>
+                <li class="dropdown" id="adminMenu">
+                  <a href="#"><i class="icon-book"></i>Admin Menu<i class="icon-angle-down"></i></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="blog-left-sidebar.html">Submissions Archive</a></li>
+                    <li><a href="blog-right-sidebar.html">Admin Page</a></li>
+                    <li><a href="post-left-sidebar.html">Admins only cool club</a></li>
+                    <li><a href="post-right-sidebar.html">Admin Store</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <?php
+                    if(isset($_SESSION['USERID'])){
+                      echo '<a href="main.php?logout=true" onclick="LogOut()"><i class="icon-lock"></i> Logout </a>';
+                    }else{
+                      echo '<a href="index.php"><i class="icon-key"></i> Login </a>';
+                    }
+                  ?>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!-- end menu -->
+
         </div>
       </div>
-      </header>
+    </div>
+  </header>
 
       <section id="maincontent">
         <div class="container">
@@ -133,6 +172,7 @@
                     <th>Title</th>
                     <th>Author</th>
                     <th>Reviewer</th>
+                    <th>Assign</th>
                     <th>Download</th>
                     <th>Remove</th>
                   </tr>
@@ -176,9 +216,9 @@
                               <td>'.$field2name.'</td>';
 
                               if($field4name == ""){
-                                echo'<td><button type="button" id="'. $field6name . '" onclick="assign(this.id)">Assign</button></td>';
+                                echo'<td>Unassigned</td><td><i class="icon-pencil" id="'. $field6name . '" onclick="showForm(this.id)"></i></td>';
                               }else{
-                                echo '<td>'.$rLNAME.', '.$rFNAME.'</td>';
+                                echo '<td>'.$rLNAME.', '.$rFNAME.'</td><td><i class="icon-pencil" id="'. $field6name . '" onclick="showForm(this.id)"></i></td>';
                               }
 
                               echo'
@@ -189,12 +229,36 @@
                             }
                         }
 
-
                   ?>
                 </table>
               </div>
             </div>
           </div>
+        </div>
+        <div id="reviewForm">
+          <form action="assignReviewer.php" method="post">
+            <h3>Select a Reviewer</h3>
+            <select name="rID">
+              <option value="0" selected>--Select Reviewer--</option>
+              <?php
+                $queryR = "SELECT * FROM User WHERE Type=2";
+                $result2 = $db-> query($queryR);
+                if($result2 -> num_rows > 0)
+                {
+                    while ($row = $result2->fetch_assoc()) {
+                      $UID = $row['UserID'];
+                      $rName = $row['Lname'] . ", " . $row['Fname'];
+                      echo '<option value="'.$UID.'">'.$rName.'</option>';
+                    }
+                }
+               ?>
+            </select>
+            <span id="buttons">
+            <input type="submit" value="Update">
+            <input type="button" value="Cancel" onclick="hideForm()">
+            <input id="prsntID" type="radio" name="pID" value="0" checked="checked">
+          </span>
+          </form>
         </div>
       </section>
       <br><br><br><br><br>
