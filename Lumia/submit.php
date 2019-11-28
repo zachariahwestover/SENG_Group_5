@@ -101,28 +101,29 @@ if(isset($_SESSION['USERID']) == false)
     </header>
     <!-- Main Section
 ================================================== -->
-    <section id="maincontent">
-	  <div class="container">
-	    <h4>Submit a paper</h4>
-	    <form action="submissions.php" method="post" class="comment-form" name="comment-form">
-		  <div class="row">
-		    <div class="span4">
-			  <label for="Title">Title <span>*</span></label>
-			  <input type="text" name="Title" class="input-block-level" placeholder="Title" />
-		    </div>
-		    <div class="span4">
-			  <label for="Author">Author(s) <span>*</span></label>
-			  <input type="text" name="Author" class="input-block-level" placeholder="Your name(s)" />
-		    </div>
-		    <div class="span8">
-			  <label for="Paper">Paper <span>*</span></label>
-			  <input type="file" name="Paper" class="input-block-level"/>
-			  <button class="btn btn-theme" type="submit">Submit Paper</button>
-		    </div>
-		  </div>
-	    </form>
-	  </div>
-    </section>
+<section id="maincontent">
+<div class="container">
+  <h4>Submit a paper</h4>
+  <form action="submissions.php" method="POST" class="comment-form" name="comment-form" enctype="multipart/form-data">
+  <div class="row">
+    <div class="span4">
+    <label for="Title">Title <span>*</span></label>
+    <input type="text" name="Title" class="input-block-level" placeholder="Title" />
+    </div>
+    <div class="span4">
+    <label for="Author">Author(s) <span>*</span></label>
+    <input type="text" name="Author" class="input-block-level" placeholder="Your name(s)" />
+    </div>
+    <div class="span8">
+      <input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
+    <label for="Paper">Paper <span>*</span></label>
+    <input type="file" name="Paper" class="input-block-level"/>
+    <button class="btn btn-theme" name="submit" type="submit">Submit Paper</button>
+    </div>
+  </div>
+  </form>
+</div>
+</section>
     <!-- Footer
  ================================================== -->
  <footer class="footer">

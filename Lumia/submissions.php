@@ -3,11 +3,10 @@ session_start();
 $UserID = $_SESSION['USERID'];
 $Title = $_POST['Title'];
 $Author = $_POST['Author'];
-$Paper = $_POST['Paper'];
+//$Paper = $_POST['Paper'];
 if(isset($_POST['submit']))
 {
 	$file = $_FILES['Paper'];
-
 	$fileName = $_FILES['Paper']['name'];
 	$fileTempName = $_FILES['Paper']['tmp_name'];
 	$fileSize = $_FILES['Paper']['size'];
@@ -28,7 +27,7 @@ if(isset($_POST['submit']))
 				$fileNameNew = uniqid('', true).".".$fileActualExt;
 				$fileDestination = 'uploads/'.$fileNameNew;
 				move_uploaded_file($fileTempName, $fileDestination);
-                $bool = 'true';
+        $bool = 'true';
 			}
 			else
 			{
@@ -63,6 +62,7 @@ if(isset($_POST['submit']))
 
        if($bool === 'true')
        {
-       		header("Location: main.php?success=true");
+       		header("Location: main.php?uploadsuccess=true");
        }
+
 ?>

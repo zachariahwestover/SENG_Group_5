@@ -75,6 +75,15 @@
 <body onload="userCheck()">
   <div id="wrapper">
     <header>
+      <?php
+        if(isset($_GET['uploadsuccess'])){
+          if($_GET['uploadsuccess']== 'true'){
+            echo'<div id="errorDiv"><span>Uploaded Successfully</span><span id="dismiss" onclick="dismiss(this.parentNode.id)">x</span></div>';
+          }else{
+            echo'<div id="errorDivF"><span>There Was An ERROR Uploading</span><span id="dismiss" onclick="dismiss(this.parentNode.id)">x</span></div>';
+          }
+        }
+       ?>
       <!-- Navbar
     ================================================== -->
       <div class="navbar navbar-static-top">

@@ -57,33 +57,6 @@
     Author: BootstrapMade.com
     Author URL: https://bootstrapmade.com
   ======================================================= -->
-  <script>
-    function confirmDelete(n){
-      var x = confirm("Are you sure you want to delete this submission? The action cannot be undone.");
-      if(x == true){
-        var url = "deletePaper.php?PaperID=" + n;
-        window.location.href = url;
-      }
-    }
-    function assign(n){
-      var url = "assignReviewer.php?PaperID=" + n;
-      window.location.href = url;
-    }
-    function showForm(n){
-      document.getElementById("prsntID").value = n;
-      var form = document.getElementById("reviewForm");
-      form.style.display = "block";
-      //console.log(document.getElementById("pID").value);
-    }
-    function hideForm(){
-      var form = document.getElementById("reviewForm");
-      form.style.display = "none";
-    }
-    function dismiss(n){
-      var message = document.getElementById(n);
-      message.style.display = "none";
-    }
-  </script>
 </head>
 
 
@@ -254,10 +227,11 @@
                ?>
             </select>
             <span id="buttons">
-            <input type="submit" value="Update">
+            <input type="submit" value="Update" onclick="loadCir()">
             <input type="button" value="Cancel" onclick="hideForm()">
             <input id="prsntID" type="radio" name="pID" value="0" checked="checked">
           </span>
+          <div class="loader" id="loadCir"></div>
           </form>
         </div>
       </section>
