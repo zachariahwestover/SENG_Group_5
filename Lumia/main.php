@@ -121,9 +121,9 @@
                     <a href="#"><i class="icon-book"></i>Admin Menu<i class="icon-angle-down"></i></a>
                     <ul class="dropdown-menu">
                       <li><a href="archive.php">Submissions Archive</a></li>
-                      <li><a href="blog-right-sidebar.html">Admin Page</a></li>
-                      <li><a href="post-left-sidebar.html">Admins only cool club</a></li>
-                      <li><a href="post-right-sidebar.html">Admin Store</a></li>
+                      <li><a href="#">Admin Page</a></li>
+                      <li><a href="#">Admins only cool club</a></li>
+                      <li><a href="#">Admin Store</a></li>
                     </ul>
                   </li>
                   <li class="dropdown" id="reviewMenu">
@@ -278,7 +278,7 @@
                           <a class="zoom" data-pretty="prettyPhoto" href="assets/img/dummies/big1.jpg">
 														<i class="icon-eye-open icon-rounded icon-48 active"></i>
 													</a>
-                          <a href="portfolio-detail.html">
+                          <a href="#">
 														<i class="icon-calendar icon-rounded icon-48 active"></i>
 													</a>
                           <div class="hidden-tablet">
@@ -293,7 +293,7 @@
                           <a class="zoom" data-pretty="prettyPhoto" href="assets/img/dummies/big1.jpg">
 														<i class="icon-eye-open icon-rounded icon-48 active"></i>
 													</a>
-                          <a href="portfolio-detail.html">
+                          <a href="#">
 														<i class="icon-calendar icon-rounded icon-48 active"></i>
 													</a>
                           <div class="hidden-tablet">
@@ -308,7 +308,7 @@
                           <a class="zoom" data-pretty="prettyPhoto" href="assets/img/dummies/big1.jpg">
 														<i class="icon-eye-open icon-rounded icon-48 active"></i>
 													</a>
-                          <a href="portfolio-detail.html">
+                          <a href="#">
 														<i class="icon-calendar icon-rounded icon-48 active"></i>
 													</a>
                           <div class="hidden-tablet">
@@ -323,7 +323,7 @@
                           <a class="zoom" data-pretty="prettyPhoto" href="assets/img/dummies/big1.jpg">
 														<i class="icon-zoom-in icon-rounded icon-48 active"></i>
 													</a>
-                          <a href="portfolio-detail.html">
+                          <a href="#">
 														<i class="icon-link icon-rounded icon-48 active"></i>
 													</a>
                           <div class="hidden-tablet">
@@ -338,7 +338,7 @@
                           <a class="zoom" data-pretty="prettyPhoto" href="assets/img/dummies/big1.jpg">
 														<i class="icon-zoom-in icon-rounded icon-48 active"></i>
 													</a>
-                          <a href="portfolio-detail.html">
+                          <a href="#">
 														<i class="icon-link icon-rounded icon-48 active"></i>
 													</a>
                           <div class="hidden-tablet">
@@ -353,7 +353,7 @@
                           <a class="zoom" data-pretty="prettyPhoto" href="assets/img/dummies/big1.jpg">
 														<i class="icon-zoom-in icon-rounded icon-48 active"></i>
 													</a>
-                          <a href="portfolio-detail.html">
+                          <a href="#">
 														<i class="icon-link icon-rounded icon-48 active"></i>
 													</a>
                           <div class="hidden-tablet">
