@@ -66,6 +66,9 @@
         if(userType == 5){
           showAdmin();
         }
+        if(userType == 2){
+          showReview();
+        }
       }
 
   </script>
@@ -121,6 +124,13 @@
                       <li><a href="blog-right-sidebar.html">Admin Page</a></li>
                       <li><a href="post-left-sidebar.html">Admins only cool club</a></li>
                       <li><a href="post-right-sidebar.html">Admin Store</a></li>
+                    </ul>
+                  </li>
+                  <li class="dropdown" id="reviewMenu">
+                    <a href="#"><i class="icon-book"></i>Reviewer Menu<i class="icon-angle-down"></i></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="revieweSubs.php">Review Submissions</a></li>
+
                     </ul>
                   </li>
                   <li>

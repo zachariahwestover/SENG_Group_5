@@ -391,6 +391,9 @@ ul.topnav .dropdown-menu li > a {
 #adminMenu{
 	display: none;
 }
+#reviewMenu{
+	display: none;
+}
 nav select {
 	display:none;
 }
