@@ -110,7 +110,7 @@
                   </li>
                   <li><label><strong>Email : </strong></label>
                     <p>
-                      alfa.nyandoro@mial.lipscomb.edu
+                      alfa.nyandoro@mail.lipscomb.edu
                     </p>
                   </li>
                   <li><label><strong>Address : </strong></label>
